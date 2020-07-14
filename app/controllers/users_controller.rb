@@ -23,10 +23,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    if user.save
+    if @user.save
       redirect_to edit_user_path
     else
-      render :edit
+      redirect_to user_path
     end
   end
 
