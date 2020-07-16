@@ -10,6 +10,6 @@ class User < ApplicationRecord
                        length: { in: 6..20 }
   validates :password_confirmation, presence: true
 
-  has_many :posts
-  has_many :comments
+  has_many :post, dependent: :destroy
+  has_many :comment, dependent: :destroy
 end
